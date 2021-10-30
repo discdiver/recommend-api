@@ -12,10 +12,12 @@ client = TestClient(app)
 #     """
 
 def test_server_returns_200_on_success():
+    """a product in the database results in a success with a similar product"""
     response = client.get("/products/103487")
     assert response.status_code == 200
     assert "112808" in response.json() 
 
 def test_string_returns_integer_msg():
+    """passing a string for a product id results in a helpful message"""
     response = client.get("/products/weedwacker").json()
     assert response['detail'][0]['msg'] == 'value is not a valid integer'
