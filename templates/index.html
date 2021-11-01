@@ -8,20 +8,28 @@
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/css/custom.css') }}">
+
     <title>Home Depot product recommender</title>
   </head>
+
   <body>
-    <div class="container">
-        <div class="row">
-            <div class="col">
-                <h1>Home Depot product recommender</h1>
-                <h2>This app returns the most similar Home Depot product to the one selected.</h2>
-                <h3>See the API docs at <a href='./docs'> /docs</a></h3>
-            
-                <p>This project uses data from Kaggle with Bootstrap, Python, and packages including FastAPI, Jinja, Scikit-learn, and Pytest</p>
-            </div>
-        </div> 
-    </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h1>Home Depot product recommender</h1>
+                    <h2>This app returns the most similar Home Depot product to the one selected.</h2>
+                    <h3>See the API docs at <a href='./docs'> /docs</a></h3>
+                    <img src="{{ url_for('static', path='images/tools.jpeg') }}" alt='tools on a table'>
+                    <p>Developed by Jeff Hale as an example FastAPI project. Not for general use. <p>
+                    <p>Check out the code on <a href="https://github.com/discdiver/recommend-api"> GitHub</a></p>
+                    <p>This project uses data from <a href="https://www.kaggle.com/c/home-depot-product-search-relevance/data"> Kaggle </a> with Bootstrap, Python, and packages including FastAPI, Jinja, Scikit-learn, and Pytest</p>
+                </div>
+            </div> 
+        </div>
+        
+          
 
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>

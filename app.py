@@ -1,7 +1,7 @@
 import pandas as pd
 from fastapi import FastAPI, Path, Request
 from fastapi.templating import Jinja2Templates
-# from fastapi.staticfiles import StaticFiles
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import HTMLResponse
 
 
@@ -9,12 +9,13 @@ cos_df = pd.read_pickle('similarities.pkl')
 
 app = FastAPI()
 
-# app.mount('/static', StaticFiles(directory='static'), name='static')
+app.mount('/static', StaticFiles(directory='static'), name='static')
 
 templates = Jinja2Templates(directory='templates')
 
 @app.get('/', response_class=HTMLResponse)
 def home(request: Request):
+    """An html static home page"""
     return templates.TemplateResponse("index.html", {'request': request})
 
 @app.get('/products/{productid}')
@@ -36,5 +37,11 @@ async def get_similar_prods(productid: int=Path(..., title="The ID of the produc
         )
     
 
+# TODO add form to home page for querying
+# TODO add css
 # TODO add product text
 # TODO add logging
+# TODO deploy to Heroku
+# TODO dockerize
+# TODO add to a GCP db and use sqlmodel with
+# TODO add tests with selenium for html portion
