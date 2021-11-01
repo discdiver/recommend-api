@@ -36,11 +36,10 @@ async def get_similar_prods(productid: int=Path(..., title="The ID of the produc
             Are you sure that Product ID exists?"""
         )
     
-
+# TODO possibilities
 # TODO add form to home page for querying
 # TODO add product text
 # TODO add logging
-# TODO deploy to Heroku
 # TODO dockerize
 # TODO add to a GCP db and use sqlmodel with
 # TODO add tests with selenium for html portion
